@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <title>My Webpage</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="a style.css">
-    <link rel="stylesheet" href="footer styles.css">
+    <link rel="stylesheet" th:href="@{/style.css}>
+    <link rel="stylesheet" th:href="@{/a style.css}">
+    <link rel="stylesheet" th:href="@{/footer styles.css}">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li class="logo"><a href="index.html">BIG LOGO</a></li>
+                <li class="logo"><a href="index.html" th:href="@{/}">BIG LOGO</a></li>
                 <li><a href="About.html" class="active">ABOUT</a></li>
                 <li><a href="how it works.html">HOW IT WORKS</a></li>
                 <li><a href="Services.html">SERVICES</a></li>

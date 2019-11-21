@@ -9,5 +9,4 @@ public class MainController {
 	public String main() {
 		return "index";
 	}
-	// hay la em phai tao mot class authenticati méo cần đâu chú có hết rồi
 }
