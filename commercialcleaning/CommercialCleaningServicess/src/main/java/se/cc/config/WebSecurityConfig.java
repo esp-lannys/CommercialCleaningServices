@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/**")
-				.permitAll().antMatchers("/js/**", "/css/**", "/img/**", "/webjars/**", "/user**").permitAll()
+				.permitAll().antMatchers("/js/**", "/css/**", "/images/**", "/webjars/**", "/user**","/static/**").permitAll()
 				.anyRequest().authenticated().and().formLogin().loginPage("/login")
 				.successHandler(successHandler).permitAll().and().logout().invalidateHttpSession(true)
 				.clearAuthentication(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/images/**").addResourceLocations("file:images/");
+		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
 	}
 
 }

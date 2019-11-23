@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Webpage</title>
+    <title>How it works</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="a style.css">
     <link rel="stylesheet" href="footer styles.css">
@@ -10,12 +10,12 @@
     <header>
         <nav>
             <ul>
-                <li class="logo"><a href="index.html">BIG LOGO</a></li>            
-                <li><a href="About.html">ABOUT</a></li>
-                <li><a href="how it works.html" class="active">HOW IT WORKS</a></li>
-                <li><a href="Services.html">SERVICES</a></li>
-                <li><a href="Contact.html">CONTACT</a></li>
-                <li><a href="#" class="signup-btn"><span> GET A QUOTE NOW</span></a></li>
+                <li class="logo"><a th:href="@{/}">BIG LOGO</a></li>            
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}" class="active">HOW IT WORKS</a></li>
+                <li><a th:href="@{/service}">SERVICES</a></li>
+                <li><a th:href="@{/contact}">CONTACT</a></li>
+                <li><a th:href="@{/login}" class="signup-btn"><span>SIGN IN</span></a></li>
             </ul>
         </nav>
     </header>
@@ -55,13 +55,13 @@
         <div class="footer-right">
             <h3>Useful Links</h3>
                 <p class="footer-links">
-                    <a href="index.html">HOME</a>
+                    <a th:href="@{/}">HOME</a>
                     |
-                    <a href="About.html">ABOUT</a>
+                    <a th:href="@{/about}">ABOUT</a>
                     |
-                    <a href="Services.html">SERVICES</a>
+                    <a th:href="@{/service}">SERVICES</a>
                     |
-                    <a href="Contact.html">CONTACTS</a>
+                    <a th:href="@{/contact}">CONTACTS</a>
                 </p>
 
                 <p>© #STAINLESS Cleaning Company</p>
