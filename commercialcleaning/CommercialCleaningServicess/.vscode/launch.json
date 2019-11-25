@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CommercialCleaningServicesApplication",
+            "request": "launch",
+            "mainClass": "se.cc.CommercialCleaningServicesApplication",
+            "projectName": "software-engineering-project"
+        }
+    ]
+}
