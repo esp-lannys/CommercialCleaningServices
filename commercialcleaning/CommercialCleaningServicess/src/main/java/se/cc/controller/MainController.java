@@ -30,4 +30,8 @@ public class MainController {
 	public String login(Model model) {
 		return "login";
 	}
+	@GetMapping("/signup")
+	public String signup(Model model) {
+		return "signup";
+	}
 }

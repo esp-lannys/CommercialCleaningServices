@@ -1,6 +1,6 @@
 .signup-btn {
     top: 10px;
-    right: 80px;
+    right: 20px;
     position: absolute;
     font-size: 25px;
     color: black;
@@ -11,7 +11,23 @@
 }
 .signup-btn span {
     display: block;
-    padding: 10px 30px;
+    padding: 5px 15px;
+}
+
+.signin-btn {
+    top: 10px;
+    right: 175px;
+    position: absolute;
+    font-size: 25px;
+    color: black;
+    border: 3px solid transparent;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #1abad7, grey );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.signin-btn span {
+    display: block;
+    padding: 5px 15px;
 }
 
 .slogan {
