@@ -69,18 +69,17 @@ header {
     position: relative;
 }
 
-div {
-    width: 500px;
+
     
 }
 
 ul {
     margin: 0;
     padding: 10px 0 -10px 0;
-    list-style-type: none;
+   
 }
 
-li {
+.menu li{
     display: inline;
     margin-right: 0px;
     font-size: 20px;
