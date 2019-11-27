@@ -34,7 +34,7 @@ header {
     background-image: url("Images/service-banner.jpg");
     background-size: 100%;
     background-position: bottom;
-    padding: 100px;
+    padding: 135px;
     color: white;
     position: relative;
 }
@@ -69,18 +69,17 @@ header {
     position: relative;
 }
 
-div {
-    width: 500px;
+
     
-}
+
 
 ul {
     margin: 0;
     padding: 10px 0 -10px 0;
-    list-style-type: none;
+   
 }
 
-li {
+.menu li{
     display: inline;
     margin-right: 0px;
     font-size: 20px;

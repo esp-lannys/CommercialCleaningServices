@@ -1,4 +1,6 @@
-footer {position: static;}
+footer {
+    position: static;
+}
 
 .footer-distributed {
     background-color: black;
@@ -8,6 +10,7 @@ footer {position: static;}
     text-align: left;
     padding: 40px 50px 40px 50px;
     margin-top: 80px;
+    clear: both;
 }
 
 .footer-left, .footer-right, .footer-center {
@@ -22,7 +25,6 @@ footer {position: static;}
 
 .footer-left img{
     width: 50%;
-    
 }
 
 /*Center Footer*/
