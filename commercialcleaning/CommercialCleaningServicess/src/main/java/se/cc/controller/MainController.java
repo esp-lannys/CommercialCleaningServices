@@ -1,16 +1,18 @@
 package se.cc.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-	@GetMapping("/")
-	public String loadIndex(Model model) {
+
+	@GetMapping({"/"})
+	public String loadIndex(Authentication authentication,Model model) {
 		return "index";
 	}
-
+	
 	@GetMapping("/howitwork")
 	public String loadDetail(Model model) {
 		return "howitworks";
@@ -30,8 +32,5 @@ public class MainController {
 	public String login(Model model) {
 		return "login";
 	}
-	@GetMapping("/signup")
-	public String signup(Model model) {
-		return "signup";
-	}
+	
 }

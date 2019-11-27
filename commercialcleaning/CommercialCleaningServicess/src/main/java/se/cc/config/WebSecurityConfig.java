@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/**")
+				.antMatchers("/**", "/signup**")
 				.permitAll().antMatchers("/js/**", "/css/**", "/images/**", "/webjars/**", "/user**","/static/**").permitAll()
 				.anyRequest().authenticated().and().formLogin().loginPage("/login")
 				.successHandler(successHandler).permitAll().and().logout().invalidateHttpSession(true)

@@ -24,7 +24,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long userid;
+	private long id;
+	private String username;
+	private String password;
 	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin")
 	private String firstname;
 	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin")
@@ -32,8 +34,7 @@ public class User {
 	private int age;
 	private String email;
 	private Date birthday;
-	private String username;
-	private String password;
+	
 	
 	
 	@CreationTimestamp
@@ -51,11 +52,11 @@ public class User {
 	private Set<Role> roles;
 
 	public long getUserid() {
-		return userid;
+		return id;
 	}
 
-	public void setUserid(long userid) {
-		this.userid = userid;
+	public void setUserid(long id) {
+		this.id = id;
 	}
 
 	public String getFirstname() {
