@@ -33,4 +33,8 @@ public class MainController {
 		return "login";
 	}
 	
+	@GetMapping("/service")
+	public String loadService(Model model) {
+		return "services";
+	}
 }
