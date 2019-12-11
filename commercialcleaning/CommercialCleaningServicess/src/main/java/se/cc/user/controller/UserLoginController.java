@@ -30,6 +30,7 @@ public class UserLoginController {
 	
 	@GetMapping
 	public String signup(Authentication authentication,Model model) {
+		model.addAttribute("user", new UserDto());
 		return "signup";
 	}
 	

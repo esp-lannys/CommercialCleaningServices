@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import javax.validation.constraints.NotEmpty;
 
-import se.cc.users.constraint.ValidPassword;
+import se.cc.user.constraint.ValidPassword;
 
 public class UserDto {
 	@NotEmpty
