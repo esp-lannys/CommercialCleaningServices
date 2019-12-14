@@ -3,9 +3,12 @@ package se.cc.user.webdto;
 import java.sql.Date;
 
 import javax.validation.constraints.NotEmpty;
-
+import se.cc.user.constraint.*;
 import se.cc.user.constraint.ValidPassword;
 
+@FieldMatch.List({
+    @FieldMatch(first = "password", second = "confirmpassword", message = "The password fields must match"),
+})
 public class UserDto {
 	@NotEmpty
 	private String username;
