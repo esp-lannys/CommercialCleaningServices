@@ -28,11 +28,6 @@ public class MainController {
 		return "about";
 	}
 	
-	@GetMapping("/login")
-	public String login(Model model) {
-		return "login";
-	}
-	
 	@GetMapping("/service")
 	public String loadService(Model model) {
 		return "services";

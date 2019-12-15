@@ -11,8 +11,6 @@ public interface UserService extends UserDetailsService{
 	
 	User findById(long id);
 	
-	UserDto save(User user);
-	
 	Role findByRole(long id);
 	
 	User findByUsername(String username);
@@ -20,4 +18,6 @@ public interface UserService extends UserDetailsService{
 	User findByEmail(String email);
 	
 	User save(UserDto userdto);
+	
+	List<User> findAllUser();
 }

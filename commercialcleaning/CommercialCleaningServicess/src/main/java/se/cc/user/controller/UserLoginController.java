@@ -46,6 +46,6 @@ public class UserLoginController {
 			return "signup";
 		}
 		userservice.save(userdto);
-		return "redirect:/index?success";
+		return "redirect:/signup?success";
 	}
 }

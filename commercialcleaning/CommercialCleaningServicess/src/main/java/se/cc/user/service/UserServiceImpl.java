@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,8 +22,9 @@ import se.cc.user.webdto.UserDto;
 @Transactional
 public class UserServiceImpl implements UserService{
 
+	@Autowired
 	private RoleRepository rolerepository;
-	
+	@Autowired
 	private UserRepository userRepository;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -42,27 +44,12 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<Role> findAllRole() {
-		// TODO Auto-generated method stub
-		return null;
+		return rolerepository.findAll();
 	}
 
 	@Override
 	public User findById(long id) {
-		// TODO Auto-generated method stub
 		return userRepository.findById(id);
-	}
-
-	@Override
-	public UserDto save(User user) {
-		UserDto userdto = new UserDto();
-		userdto.setUsername(user.getUsername());
-		userdto.setPassword(user.getPassword());
-		userdto.setBirthday(user.getBirthday());
-		userdto.setAge(user.getAge());
-		userdto.setEmail(user.getEmail());
-		userdto.setFirstname(user.getFirstname());
-		userdto.setLastname(user.getLastname());
-		return userdto;
 	}
 
 	@Override
@@ -93,7 +80,12 @@ public class UserServiceImpl implements UserService{
 		user.setUsername(userdto.getUsername());
 		user.setPassword(userdto.getPassword());
 		user.setBirthday(userdto.getBirthday());
-		return user;
+		return userRepository.save(user);
+	}
+
+	@Override
+	public List<User> findAllUser() {
+		return userRepository.findAll();
 	}
 
 }

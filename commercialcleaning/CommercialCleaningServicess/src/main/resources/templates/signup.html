@@ -17,47 +17,47 @@
 						error</p>
             <h2>SIGN UP</h2>
             <div class="input-group" th:classappend="${#fields.hasErrors('username')}? 'has-error':''">
-                <input type="text" name="loginUser" id="loginUser" >
-                <label for="username" th:field="*{username}">User</label>
+                <input type="text" name="loginUser" id="loginUser" th:field="*{username}">
+                <label for="username" >User</label>
                 <p class="error-message"
 							th:each="error: ${#fields.errors('username')}"
 							th:text="${error}">Validation error</p>
             </div>
             <div class="input-group" th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
-                <input type="password" name="loginPassword" id="loginPassword" >
-                <label for="password" th:field="*{password}">Password</label>
+                <input type="password" name="loginPassword" id="loginPassword" th:field="*{password}">
+                <label for="password" >Password</label>
                 <p class="error-message"
 							th:each="error: ${#fields.errors('password')}"
 							th:text="${error}">Validation error</p>
             </div>
             <div class="input-group" th:classappend="${#fields.hasErrors('confirmpassword')}? 'has-error':''">
-                <input type="password" name="confirm" >
-                <label for="confirmpassword" th:field="*{confirmpassword}">Confirm Password</label>
+                <input type="password" name="confirm" th:field="*{confirmpassword}">
+                <label for="confirmpassword" >Confirm Password</label>
                 <p class="error-message"
 							th:each="error: ${#fields.errors('confirmpassword')}"
 							th:text="${error}">Validation error</p>
             </div>
              <div class="input-group">
                 <input type="text" name="birthday" >
-                <label for="birthday">Birthday</label>
+                <label for="birthday" th:field="*{birthday}">Birthday</label>
             </div>
              <div class="input-group">
-                <input type="text" name="age" required>
-                <label for="age">Age</label>
+                <input type="text" name="age" th:field="*{age}">
+                <label for="age" >Age</label>
             </div>
              <div class="input-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
-                <input type="text" name="email"  required>
-                <label for="email" th:field="*{email}">Email</label>
+                <input type="text" name="email"  th:field="*{email}">
+                <label for="email" >Email</label>
                 <p class="error-message"
 							th:each="error: ${#fields.errors('email')}"
 							th:text="${error}">Validation error</p>
             </div>
              <div class="input-group">
-                <input type="text" name="firstname" required>
+                <input type="text" name="firstname" th:field="*{firstname}">
                 <label for="firstname">First Name</label>
             </div>
              <div class="input-group">
-                <input type="text" name="lastname" required>
+                <input type="text" name="lastname" th:field="*{lastname}">
                 <label for="lastname">Last Name</label>
             </div>
             <input type="submit" value="SUBMIT" class="submit-btn">
