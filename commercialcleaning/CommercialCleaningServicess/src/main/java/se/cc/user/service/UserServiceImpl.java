@@ -4,12 +4,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,12 +20,10 @@ import se.cc.user.webdto.UserDto;
 @Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService{
-	@Autowired
+
 	private RoleRepository rolerepository;
-	@Autowired
+	
 	private UserRepository userRepository;
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userRepository.findByUsername(username);
@@ -46,27 +42,44 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<Role> findAllRole() {
-		return rolerepository.findAll();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public User findById(long id) {
+		// TODO Auto-generated method stub
 		return userRepository.findById(id);
 	}
 
+	@Override
+	public UserDto save(User user) {
+		UserDto userdto = new UserDto();
+		userdto.setUsername(user.getUsername());
+		userdto.setPassword(user.getPassword());
+		userdto.setBirthday(user.getBirthday());
+		userdto.setAge(user.getAge());
+		userdto.setEmail(user.getEmail());
+		userdto.setFirstname(user.getFirstname());
+		userdto.setLastname(user.getLastname());
+		return userdto;
+	}
 
 	@Override
 	public Role findByRole(long id) {
+		// TODO Auto-generated method stub
 		return rolerepository.findById(id);
 	}
 
 	@Override
 	public User findByUsername(String username) {
+		// TODO Auto-generated method stub
 		return userRepository.findByUsername(username);
 	}
 
 	@Override
 	public User findByEmail(String email) {
+		// TODO Auto-generated method stub
 		return userRepository.findByEmail(email);
 	}
 
@@ -78,9 +91,9 @@ public class UserServiceImpl implements UserService{
 		user.setAge(userdto.getAge());
 		user.setEmail(userdto.getEmail());
 		user.setUsername(userdto.getUsername());
-		user.setPassword(passwordEncoder.encode(userdto.getPassword()));
+		user.setPassword(userdto.getPassword());
 		user.setBirthday(userdto.getBirthday());
-		return userRepository.save(user);
+		return user;
 	}
 
 }

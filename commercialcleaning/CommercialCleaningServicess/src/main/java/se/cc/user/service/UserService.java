@@ -10,7 +10,9 @@ public interface UserService extends UserDetailsService{
 	List<Role> findAllRole();
 	
 	User findById(long id);
-		
+	
+	UserDto save(User user);
+	
 	Role findByRole(long id);
 	
 	User findByUsername(String username);

@@ -21,7 +21,7 @@ import se.cc.user.webdto.UserDto;
 public class UserLoginController {
 	
 	@Autowired
-	private UserService userService;
+	private UserService userservice;
 	
 	@ModelAttribute("user")
 	public UserDto userDto() {
@@ -36,8 +36,8 @@ public class UserLoginController {
 	
 	@PostMapping
 	public String register(@ModelAttribute("user") @Valid UserDto userdto, BindingResult result) throws Exception {
-		User existingUsername = userService.findByUsername(userdto.getUsername());
-		User existingEmail = userService.findByEmail(userdto.getEmail());
+		User existingUsername = userservice.findByUsername(userdto.getUsername());
+		User existingEmail = userservice.findByEmail(userdto.getEmail());
 		
 		if (existingEmail != null || existingUsername != null) {
 			result.rejectValue("email", null,"There is email or username already registered");
@@ -45,7 +45,7 @@ public class UserLoginController {
 		if (result.hasErrors()) {
 			return "signup";
 		}
-		userService.save(userdto);
-		return "redirect:/signup?success";
+		userservice.save(userdto);
+		return "redirect:/index?success";
 	}
 }
