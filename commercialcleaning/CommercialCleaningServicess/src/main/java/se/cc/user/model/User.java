@@ -24,6 +24,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="userid")
 	private long id;
 	private String username;
 	private String password;

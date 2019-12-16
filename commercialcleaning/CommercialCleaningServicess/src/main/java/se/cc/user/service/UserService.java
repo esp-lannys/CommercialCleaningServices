@@ -20,4 +20,6 @@ public interface UserService extends UserDetailsService{
 	User save(UserDto userdto);
 	
 	List<User> findAllUser();
+	
+	void autoLogin(User user);
 }
