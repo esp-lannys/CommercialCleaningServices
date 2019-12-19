@@ -1,0 +1,31 @@
+.motto {
+    padding: 40px;
+    padding-bottom: 10px;
+    font-size: 50px;
+}
+
+.why-choose-us {
+    list-style-type: none;
+    padding-top: 20px;
+}
+
+.about-info {
+    margin-top: 30px;
+    text-align: center;
+    
+}
+
+.answer {
+    font-size: 22px;
+    padding: 10px 15% 40px 15%;
+}
+
+.reason {
+    
+    margin: 15px;
+}
+.small-questions {
+    font-size: 30px;
+    margin: 40px;
+    color: #1abad7;
+}
