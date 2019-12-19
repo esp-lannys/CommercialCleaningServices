@@ -17,7 +17,6 @@ import se.cc.user.service.UserService;
 import se.cc.user.webdto.UserDto;
 
 @Controller
-@RequestMapping("/signup")
 public class UserRegistrationController {
 	
 	@Autowired
@@ -28,13 +27,13 @@ public class UserRegistrationController {
 		return new UserDto();
 	}
 	
-	@GetMapping
+	@GetMapping("/signup")
 	public String signup(Authentication authentication,Model model) {
 		model.addAttribute("user", new UserDto());
 		return "signup";
 	}
 	
-	@PostMapping
+	@PostMapping("/signup/add")
 	public String register(@ModelAttribute("user") @Valid UserDto userdto, BindingResult result) throws Exception {
 		User existingUsername = userservice.findByUsername(userdto.getUsername());
 		User existingEmail = userservice.findByEmail(userdto.getEmail());
@@ -46,6 +45,7 @@ public class UserRegistrationController {
 			return "signup";
 		}
 		userservice.save(userdto);
+		
 		return "redirect:/signup?success";
 	}
 }

@@ -8,28 +8,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-	@GetMapping({"/"})
-	public String loadIndex(Authentication authentication,Model model) {
-		return "index";
-	}
 	
 	@GetMapping("/howitwork")
-	public String loadDetail(Model model) {
+	public String loadDetail() {
 		return "howitworks";
 	}
 
 	@GetMapping("/contact")
-	public String loadContact(Model model) {
+	public String loadContact() {
 		return "contact";
 	}
 
 	@GetMapping("/about")
-	public String loadAbout(Model model) {
+	public String loadAbout() {
 		return "about";
 	}
 	
 	@GetMapping("/service")
-	public String loadService(Model model) {
+	public String loadService() {
 		return "services";
 	}
 }

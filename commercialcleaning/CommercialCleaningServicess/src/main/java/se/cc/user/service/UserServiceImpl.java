@@ -1,12 +1,17 @@
 package se.cc.user.service;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -18,7 +23,7 @@ import se.cc.user.repository.RoleRepository;
 import se.cc.user.repository.UserRepository;
 import se.cc.user.webdto.UserDto;
 
-@Service("userService")
+@Service
 @Transactional
 public class UserServiceImpl implements UserService{
 
@@ -27,19 +32,15 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserRepository userRepository;
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username);
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		User user = userRepository.findByUsername(email);
 		if (user == null) {
 			throw new UsernameNotFoundException("Invalid username or password");
 		}
-		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-		Set<Role> roles = user.getRoles();
-		for (Role role : roles) {
-			grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-		}
 
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-				grantedAuthorities);
+		return new org.springframework.security.core.userdetails.User(user.getUsername(),
+				user.getPassword(),
+				mapRolesToAuthorities(user.getRoles()));
 	}
 
 	@Override
@@ -78,8 +79,9 @@ public class UserServiceImpl implements UserService{
 		user.setAge(userdto.getAge());
 		user.setEmail(userdto.getEmail());
 		user.setUsername(userdto.getUsername());
-		user.setPassword(userdto.getPassword());
+		user.setPassword(userdto.getPassword()); // nhớ đổi lại là encode
 		user.setBirthday(userdto.getBirthday());
+		user.setRoles(Arrays.asList(new Role("ROLE_USER")));
 		return userRepository.save(user);
 	}
 
@@ -88,10 +90,9 @@ public class UserServiceImpl implements UserService{
 		return userRepository.findAll();
 	}
 
-	@Override
-	public void autoLogin(User user) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
+        return roles.stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .collect(Collectors.toList());
+    }
 }

@@ -21,5 +21,4 @@ public interface UserService extends UserDetailsService{
 	
 	List<User> findAllUser();
 	
-	void autoLogin(User user);
 }
