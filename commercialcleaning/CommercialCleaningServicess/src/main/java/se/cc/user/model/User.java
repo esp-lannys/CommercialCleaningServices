@@ -2,6 +2,7 @@ package se.cc.user.model;
 
 import se.cc.user.model.Role;
 import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.Set;
 import java.sql.Date;
 import javax.persistence.CascadeType;
@@ -50,7 +51,7 @@ public class User {
 			joinColumns = @JoinColumn(name = "userid"),
 			inverseJoinColumns = @JoinColumn(name = "roleid")
 	)
-	private Set<Role> roles;
+	private Collection<Role> roles;
 
 	public long getUserid() {
 		return id;
@@ -116,11 +117,11 @@ public class User {
 		this.update_date = update_date;
 	}
 
-	public Set<Role> getRoles() {
+	public Collection<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(Collection<Role> roles) {
 		this.roles = roles;
 	}
 
@@ -139,6 +140,9 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "User:" + "id:" + id + "|| USERNAME: " + username + "|| EMAIL: " + email 
+				+"|| FRISTNAME: " + firstname + "|| LASTNAME: " + lastname;
+	}
 }

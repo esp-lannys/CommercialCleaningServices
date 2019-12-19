@@ -53,4 +53,9 @@ public class Role implements Serializable{
 	public void setPerson(Set<User> user) {
 		this.user = user;
 	}
+	
+	@Override
+	public String toString() {
+		return "ROLE: " + "|| ID: " + id + "|| NAME: " + name;
+	}
 }
