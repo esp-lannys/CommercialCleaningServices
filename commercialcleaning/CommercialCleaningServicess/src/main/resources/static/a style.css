@@ -31,8 +31,8 @@
 }
 
 .slogan {
-    font-size: 60px;
-    font-style: italic;
+    font-size: 55px;
+    
     position: absolute;
     bottom: 0px;
     left: 20px;
@@ -40,9 +40,8 @@
 }
 
 .slogan-special {
-    color: #1abad7;
-    font-size: 60px;
-
+    color: #0abde3;
+    font-size: 55px;
     position: absolute;
     bottom: 0px;
     left: 20px;

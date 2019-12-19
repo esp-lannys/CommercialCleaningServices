@@ -21,9 +21,9 @@ header {
 
 .one{
     background: gray;
-    background-image: url("Images/team 1.jpg");
+    background-image: url("images/team\ 1.jpg");
     background-size: 100%;
-    background-position: top;
+    background-position: right; 
     padding: 265px;
     color: white;
     position: relative;
@@ -31,7 +31,7 @@ header {
 
 .one-service{
     background: gray;
-    background-image: url("Images/service-banner.jpg");
+    background-image: url("images/service-banner.jpg");
     background-size: 100%;
     background-position: bottom;
     padding: 135px;
@@ -106,7 +106,7 @@ ul {
 }
 
 .small-questions-index {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .logo a{
