@@ -2,6 +2,7 @@ package se.cc.user.webdto;
 
 import java.sql.Date;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotEmpty;
 
 import se.cc.user.constraint.ValidPassword;
@@ -17,9 +18,15 @@ public class UserDto {
 	private String confirmpassword;
 	private Date birthday;
 	private int age;
+	@NotEmpty
 	private String email;
+	@NotEmpty
 	private String firstname;
+	@NotEmpty
 	private String lastname;
+	private final int power = 1;
+	@AssertTrue
+	private Boolean terms;
 	public String getUsername() {
 		return username;
 	}
@@ -50,6 +57,13 @@ public class UserDto {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	public Boolean getTerms() {
+		return terms;
+	}
+
+	public void setTerms(Boolean terms) {
+		this.terms = terms;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -67,6 +81,9 @@ public class UserDto {
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+	public int getPower() {
+		return power;
 	}
 	
 }

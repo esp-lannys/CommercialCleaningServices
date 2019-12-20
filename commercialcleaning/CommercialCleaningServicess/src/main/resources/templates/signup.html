@@ -47,10 +47,6 @@
                 <input type="text" name="birthday" >
                 <label for="birthday" th:field="*{birthday}">Birthday</label>
             </div>
-             <div class="input-group">
-                <input type="text" name="age" th:field="*{age}">
-                <label for="age" >Age</label>
-            </div>
              <div class="input-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
                 <input type="text" name="email"  th:field="*{email}">
                 <label for="email" >Email</label>

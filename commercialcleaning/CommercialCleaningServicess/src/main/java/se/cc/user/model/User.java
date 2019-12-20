@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.CreationTimestamp;
@@ -33,12 +34,15 @@ public class User {
 	private String firstname;
 	@Column(columnDefinition = "VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin")
 	private String lastname;
-	private int age;
 	private String email;
 	private Date birthday;
+	private int power;
+	
+	@OneToOne(mappedBy="user",cascade = CascadeType.ALL)
+	private Contract contract;
 	
 	
-	
+
 	@CreationTimestamp
 	private Timestamp create_date;
 	
@@ -51,7 +55,7 @@ public class User {
 			joinColumns = @JoinColumn(name = "userid"),
 			inverseJoinColumns = @JoinColumn(name = "roleid")
 	)
-	private Collection<Role> roles;
+	private Set<Role> roles;
 
 	public long getUserid() {
 		return id;
@@ -75,14 +79,6 @@ public class User {
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public String getEmail() {
@@ -117,11 +113,11 @@ public class User {
 		this.update_date = update_date;
 	}
 
-	public Collection<Role> getRoles() {
+	public Set<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Collection<Role> roles) {
+	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 
@@ -144,5 +140,21 @@ public class User {
 	public String toString() {
 		return "User:" + "id:" + id + "|| USERNAME: " + username + "|| EMAIL: " + email 
 				+"|| FRISTNAME: " + firstname + "|| LASTNAME: " + lastname;
+	}
+
+	public int getPower() {
+		return power;
+	}
+
+	public void setPower(int power) {
+		this.power = power;
+	}
+
+	public Contract getContract() {
+		return contract;
+	}
+
+	public void setContract(Contract contract) {
+		this.contract = contract;
 	}
 }

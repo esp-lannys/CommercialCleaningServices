@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Commercial Cleaning Services</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/a style.css}">
+    <link rel="stylesheet" th:href="@{/footer styles.css}">
+    <link rel="stylesheet" th:href="@{/index service.css}">
+    <link rel="stylesheet" th:href="@{/contract.css}">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="menu logo"><a th:href="@{/admin}">BIG LOGO</a></li>
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/service}">SERVICES</a></li>
+                <li><a th:href="@{/admin/contract}" class="active">CONTRACT</a> </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Contract Info</h2>
+                    <form method="post" th:object="contract" th:href="@{/admin/contract/add}">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="First Name" name="firstName" th:field="*{firstName}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Last Name" name="lastName" th:field="*{lastName}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="number" placeholder="Package Number" name="packNumber" th:field="*{packNumber}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Address" name="address" th:field="*{address}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Phone" name="phone" th:field="*{phone}">
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Vendor JS-->
+    <script th:src="@{/vendor/select2/select2.min.js}"></script>
+    <script th:src="@{/vendor/datepicker/moment.min.js}"></script>
+    <script th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
+    
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <img src="images/logo 2.png" alt="">
+        </div>
+
+        <div class="footer-center">
+            <h3>Contacts</h3>
+    <section class="two" >
+        <div>
+            <p>International University</p>
+        </div>
+
+        <div>
+            <p>se_project@gmail.com</p>
+        </div>
+
+        <div>
+            <p>+84 123 456 789</p>
+        </div>
+    </section>
+        </div>
+    
+        <div class="footer-right">
+            <h3>Useful Links</h3>
+                <p class="footer-links">
+                	|
+                    <a th:href="@{/}">HOME</a>
+                    |
+                    <a th:href="@{/about}">ABOUT</a>
+                    |
+                    <a th:href="@{/service}">SERVICES</a>
+                    |
+                </p>
+
+                <p>The SHINING Company</p>
+        </div>
+    </footer>
+</body>
+</html>

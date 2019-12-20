@@ -17,12 +17,10 @@
     <header>
         <nav>
             <ul class="menu">
-                <li class="logo"><a th:href="@{/}">BIG LOGO</a></li>
+                <li class="menu logo"><a th:href="@{/}">BIG LOGO</a></li>
                 <li><a th:href="@{/about}">ABOUT</a></li>
                 <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
                 <li><a th:href="@{/service}" class="active">SERVICES</a></li>
-                <li><a th:href="@{/login}" class="signin-btn"><span> SIGN IN</span></a></li>
-                <li><a th:href="@{/signup}" class="signup-btn"><span> SIGN UP</span></a></li>
             </ul>
         </nav>
     </header>
@@ -41,7 +39,7 @@
             <h3 class="pricing-title">Basic</h3>
             <div class="price"><i>Basic house cleaning</i></div>
 
-            <ul class="table-list">
+            <ul class="table-list" >
                 <li>Wall Washing</li>
                 <li>Floor Cleaning</li>
                 <li class="basic-no">Carpet Cleaning</li>
@@ -53,7 +51,7 @@
 
             <div class="table-buy">
                 <p>59.99<sup>$</sup></p>
-                <a href="#" class="pricing-action">Request</a>
+                <a th:href="@{/signup}" class="pricing-action">Request</a>
             </div>
         </div>
 
@@ -73,7 +71,7 @@
 
             <div class="table-buy">
                 <p>219.99<sup>$</sup></p>
-                <a href="#" class="pricing-action">Request</a>
+                <a th:href="@{/signup}" class="pricing-action">Request</a>
             </div>
         </div>
 
@@ -93,7 +91,7 @@
 
             <div class="table-buy">
                 <p>129.99<sup>$</sup></p>
-                <a href="#" class="pricing-action">Request</a>
+                <a th:href="@{/signup}" class="pricing-action">Request</a>
             </div>
         </div>
     </div>
@@ -125,16 +123,18 @@
         <div class="footer-right">
             <h3>Useful Links</h3>
             <p class="footer-links">
-                <a th:href="@{/}">HOME</a>
-                |
-                <a th:href="@{/about}">ABOUT</a>
-                |
-                <a th:href="@{/service}">SERVICES</a>
-                |
-                <a th:href="@{/contact}">CONTACTS</a>
+                <p class="footer-links">
+                	|
+                    <a th:href="@{/}">HOME</a>
+                    |
+                    <a th:href="@{/about}">ABOUT</a>
+                    |
+                    <a th:href="@{/service}">SERVICES</a>
+                    |
+                </p>
             </p>
 
-            <p>© The SHINING Cleaning Company</p>
+            <p>The SHINING Company</p>
         </div>
 
 

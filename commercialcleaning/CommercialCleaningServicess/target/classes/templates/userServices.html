@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Services</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/a style.css}">
+    <link rel="stylesheet" th:href="@{/footer styles.css}">
+    <link rel="stylesheet" th:href="@{/service package.css}">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="menu logo"><a th:href="@{/user}">BIG LOGO</a></li>
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/user/service}" class="active">SERVICES</a></li>
+                <li><a th:href="@{/contract}">CONTRACT</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="one-service">
+        <h1 class="non-home-title">SERVICES</h1>
+    </section>
+
+    <section class="two-title">
+        <h2>Save your time with our 3 <i>favorite service packages</i></h2>
+    </section>
+
+    <div class="pricing-wrapper clearfix">
+
+        <div class="pricing-table">
+            <h3 class="pricing-title">Basic</h3>
+            <div class="price"><i>Basic house cleaning</i></div>
+
+            <ul class="table-list" >
+                <li>Wall Washing</li>
+                <li>Floor Cleaning</li>
+                <li class="basic-no">Carpet Cleaning</li>
+                <li class="basic-no">Furniture Cleaning</li>
+                <li class="basic-no">Draperies Cleaning</li>
+                <li class="basic-no">Air - quality Testing</li>
+                <li class="basic-no">Water, smoke and fire damage resistance</li>
+            </ul>
+
+            <div class="table-buy">
+                <p>59.99<sup>$</sup></p>
+                <a th:href="@{/signup}" class="pricing-action">Request</a>
+            </div>
+        </div>
+
+        <div class="pricing-table recommended">
+            <h3 class="pricing-title">Premium</h3>
+            <div class="price"><i>An ultimate SHINING package</i></div>
+
+            <ul class="table-list">
+                <li>Wall Washing</li>
+                <li>Floor Cleaning</li>
+                <li>Carpet Cleaning</li>
+                <li>Furniture Cleaning</li>
+                <li>Draperies Cleaning</li>
+                <li>Air - quality Testing</li>
+                <li>Water, smoke and fire damage resistance</li>
+            </ul>
+
+            <div class="table-buy">
+                <p>219.99<sup>$</sup></p>
+                <a th:href="@{/signup}" class="pricing-action">Request</a>
+            </div>
+        </div>
+
+        <div class="pricing-table">
+            <h3 class="pricing-title">Standard</h3>
+            <div class="price"><i>All-rounded service</i></div>
+
+            <ul class="table-list">
+                <li>Wall Washing</li>
+                <li>Floor Cleaning</li>
+                <li>Carpet Cleaning</li>
+                <li>Furniture Cleaning</li>
+                <li>Draperies Cleaning</li>
+                <li class="basic-no">Air - quality Testing</li>
+                <li class="basic-no">Water, smoke and fire damage resistance</li>
+            </ul>
+
+            <div class="table-buy">
+                <p>129.99<sup>$</sup></p>
+                <a th:href="@{/signup}" class="pricing-action">Request</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <img src="Images/logo 2.png" alt="">
+        </div>
+
+        <div class="footer-center">
+            <h3>Contacts</h3>
+            <section class="two">
+                <div>
+                    <p>International University</p>
+                </div>
+
+                <div>
+                    <p>se_project@gmail.com</p>
+                </div>
+
+                <div>
+                    <p>+84 123 456 789</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer-right">
+            <h3>Useful Links</h3>
+            <p class="footer-links">
+                <p class="footer-links">
+                	|
+                    <a th:href="@{/user}">HOME</a>
+                    |
+                    <a th:href="@{/userAbout}">ABOUT</a>
+                    |
+                    <a th:href="@{/service}">SERVICES</a>
+                    |
+                </p>
+            </p>
+
+            <p>The SHINING Company</p>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>

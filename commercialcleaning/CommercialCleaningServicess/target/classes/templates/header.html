@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Commercial Cleaning Services</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/a style.css}">
+    <link rel="stylesheet" th:href="@{/footer styles.css}">
+    <link rel="stylesheet" th:href="@{/index service.css}">
+    
+    
+</head>
+<body>
+
+        <nav th:fragment="header_login">
+            <ul class="menu">
+                <li class="menu logo"><a th:href="@{/}">BIG LOGO</a></li>
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/service}">SERVICES</a></li>
+                <li><a th:href="@{/login}" class="signin-btn"><span> SIGN IN</span></a></li>
+                <li><a th:href="@{/signup}" class="signup-btn"><span> SIGN UP</span></a></li>
+            </ul>
+        </nav>
+
+    
+    	<nav th:fragment="header_user">
+            <ul class="menu">
+                <li class="menu logo"><a th:href="@{/}">BIG LOGO</a></li>
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/service}">SERVICES</a></li>
+                <li class="signin_btn">
+				 	<a th:href="@{/logout}">Logout</a>
+				</li>
+            </ul>
+            
+        </nav>
+    
+
+		<nav th:fragment="header_admin">
+            <ul class="menu">
+                <li class="menu logo"><a th:href="@{/}">BIG LOGO</a></li>
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/service}">SERVICES</a></li>
+                <li><a th:href="@{/contract}">CONTRACT</a></li>
+                <li class = "info">
+            		<a th:href="@{/logout}">Logout</a>
+            	</li>
+            </ul>
+            
+        </nav>
+</body>
+</html>

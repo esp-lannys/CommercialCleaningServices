@@ -1,5 +1,7 @@
 package se.cc.user.controller;
 
+import java.security.Principal;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +47,6 @@ public class UserRegistrationController {
 			return "signup";
 		}
 		userservice.save(userdto);
-		
 		return "redirect:/signup?success";
 	}
 }

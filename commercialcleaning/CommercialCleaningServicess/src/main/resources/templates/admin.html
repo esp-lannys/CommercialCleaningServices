@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Commercial Cleaning Services</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/a style.css}">
+    <link rel="stylesheet" th:href="@{/footer styles.css}">
+    <link rel="stylesheet" th:href="@{/index service.css}">
+</head>
+
+<body>
+    <header>
+         <nav>
+            <ul class="menu">
+                <li class="menu logo"><a th:href="@{/admin}">BIG LOGO</a></li>
+                <li><a th:href="@{/about}">ABOUT</a></li>
+                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/service}">SERVICES</a></li>
+                <li><a th:href="@{/admin/contract}">CONTRACT</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="one">
+        <h1 class="slogan"><p>We will CLEAN. <br>We will PROVIDE.</p></h1>
+        <h1 class="slogan-special">We will make your house so SHINE</h1>
+    </section>
+
+
+
+	<section class = "info">
+		<a th:href="@{/admin}">Back</a>
+	</section>
+
+
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <img src="images/logo 2.png" alt="">
+        </div>
+
+        <div class="footer-center">
+            <h3>Contacts</h3>
+            <section class="two">
+                <div>
+                    <p>International University</p>
+                </div>
+
+                <div>
+                    <p>se_project@gmail.com</p>
+                </div>
+
+                <div>
+                    <p>+84 123 456 789</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer-right">
+            <h3>Useful Links</h3>
+            <p class="footer-links">
+            	|
+                <a th:href="@{/}">HOME</a>
+                |
+                <a th:href="@{/about}">ABOUT</a>
+                |
+                <a th:href="@{/service}">SERVICES</a>
+                |
+            </p>
+
+            <p>The SHINING Company</p>
+        </div>
+    </footer>
+</body>
+
+</html>
