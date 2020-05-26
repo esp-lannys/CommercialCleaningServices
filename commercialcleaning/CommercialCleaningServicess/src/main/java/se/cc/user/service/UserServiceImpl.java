@@ -194,7 +194,7 @@ public class UserServiceImpl implements UserService{
 		user.setPassword(passwordEncoder.encode(userdto.getPassword())); 
 		user.setBirthday(userdto.getBirthday());
 		user.setPower(userdto.getPower());
-		String key = "ROLE_" + userdto.getDropdownSelectedValue();
+		String key = "ROLE_"+userdto.getDropdownSelectedValue();
 		switch (key) {
 		case "ROLE_USER":
 			user.setPower(1);
@@ -209,6 +209,9 @@ public class UserServiceImpl implements UserService{
 		return userRepository.save(user);
 	}
 
-	
+	public boolean checkExist(String username) {
+		
+		return false;
+	}
 
 }

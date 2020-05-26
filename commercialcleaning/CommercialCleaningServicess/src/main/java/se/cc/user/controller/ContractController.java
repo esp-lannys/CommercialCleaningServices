@@ -24,19 +24,19 @@ public class ContractController {
 	}
 	
 	@PreAuthorize("!(hasRole('EMPLOYEE') OR hasRole('ADMIN'))")
-	@GetMapping("/admin/contract")
+	@GetMapping("/user/contract")
 	public String loadContract(Model model){
 		model.addAttribute("contract", new ContractDto());
 		return "contract";
 	}
 	
-	@PostMapping("/admin/contract/add")
+	@PostMapping("/user/contract/add")
 	public String addContract(@ModelAttribute("contract") ContractDto contractdto, BindingResult result)
 			throws Exception {
 		if(result.hasErrors()) {
-			return "/admin/contract";
+			return "/user/contract";
 		}
 		contractService.save(contractdto);
-		return "redirect:/admin/contract?success";
+		return "redirect:/user/contract?success";
 	}
 }

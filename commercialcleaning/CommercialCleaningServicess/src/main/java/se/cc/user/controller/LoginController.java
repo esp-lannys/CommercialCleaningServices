@@ -57,9 +57,11 @@ public class LoginController {
 		return "index";
 	}
 	
-	@PreAuthorize("!(hasRole('USER') OR hasRole('ADMIN'))")
+	@PreAuthorize("(hasRole('USER') OR hasRole('ADMIN'))")
 	@GetMapping("/login")
 	public String login(Model model,ModelMap map) {
+//		map.addAttribute("user",getPrincipal());
+//		map.addAttribute("admin",getPrincipal());
 		
 		return "login";
 	}
@@ -67,7 +69,7 @@ public class LoginController {
 	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/user")
 	public String userPage(ModelMap map,Model model) {
-		map.addAttribute("header", "header_user");
+		map.addAttribute("user", getPrincipal());
 		model.addAttribute("user", new UserDto());
 		return "/user";
 	}
@@ -90,9 +92,9 @@ public class LoginController {
 			}
 
 			if (isUser(roles)) {
-				map.addAttribute("header", "header_user");
+				map.addAttribute("header", "");
 			} else if (isAdmin(roles)) {
-				map.addAttribute("header", "header_admin");
+				map.addAttribute("header", "");
 			}
 		} else {
 			//

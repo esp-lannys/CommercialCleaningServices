@@ -20,11 +20,12 @@
     <header>
         <nav>
             <ul class="menu">
-                <li class="menu logo"><a th:href="@{/admin}">BIG LOGO</a></li>
-                <li><a th:href="@{/about}">ABOUT</a></li>
-                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
-                <li><a th:href="@{/service}">SERVICES</a></li>
-                <li><a th:href="@{/admin/contract}" class="active">CONTRACT</a> </li>
+                <li class="menu logo"><a th:href="@{/user}">BIG LOGO</a></li>
+                <li><a th:href="@{/user/about}">ABOUT</a></li>
+                <li><a th:href="@{/user/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/user/service}">SERVICES</a></li>
+                <li><a th:href="@{/user/contract}" class="active">CONTRACT</a> </li>
+                <li><a th:href="@{/logout}">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +36,12 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Contract Info</h2>
-                    <form method="post" th:object="contract" th:href="@{/admin/contract/add}">
+                    <form method="post" th:object="${contract}" th:href="@{/user/contract/add}">
+                    <div th:if="${param.success}">
+						<script type="text/javascript">
+							window.location.href = "/user";
+						</script>
+					</div>
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="First Name" name="firstName" th:field="*{firstName}">
                         </div>
@@ -43,10 +49,10 @@
                             <input class="input--style-3" type="text" placeholder="Last Name" name="lastName" th:field="*{lastName}">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="number" placeholder="Package Number" name="packNumber" th:field="*{packNumber}">
+                            <input class="input--style-3" type="text" placeholder="Package Number" name="packNumber" th:field="*{packNumber}">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="Address" name="address" th:field="*{address}">
+                            <input class="input--style-3" type="text" placeholder="Address" name="address" th:field="*{address}">
                         </div>
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Phone" name="phone" th:field="*{phone}">
@@ -59,11 +65,6 @@
             </div>
         </div>
     </div>
-
-	<!-- Vendor JS-->
-    <script th:src="@{/vendor/select2/select2.min.js}"></script>
-    <script th:src="@{/vendor/datepicker/moment.min.js}"></script>
-    <script th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
     
     <footer class="footer-distributed">
         <div class="footer-left">

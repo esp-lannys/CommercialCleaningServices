@@ -18,10 +18,11 @@
         <nav>
             <ul class="menu">
                 <li class="menu logo"><a th:href="@{/user}">BIG LOGO</a></li>
-                <li><a th:href="@{/about}">ABOUT</a></li>
-                <li><a th:href="@{/howitwork}">HOW IT WORKS</a></li>
+                <li><a th:href="@{/user/about}">ABOUT</a></li>
+                <li><a th:href="@{/user/howitwork}">HOW IT WORKS</a></li>
                 <li><a th:href="@{/user/service}" class="active">SERVICES</a></li>
-                <li><a th:href="@{/contract}">CONTRACT</a> </li>
+                <li><a th:href="@{/user/contract}">CONTRACT</a> </li>
+                <li><a th:href="@{/logout}">LOGOUTL</a></li>
             </ul>
         </nav>
     </header>
@@ -52,7 +53,7 @@
 
             <div class="table-buy">
                 <p>59.99<sup>$</sup></p>
-                <a th:href="@{/signup}" class="pricing-action">Request</a>
+                <a href="#" class="pricing-action">Request</a>
             </div>
         </div>
 
@@ -72,7 +73,7 @@
 
             <div class="table-buy">
                 <p>219.99<sup>$</sup></p>
-                <a th:href="@{/signup}" class="pricing-action">Request</a>
+                <a href="#" class="pricing-action">Request</a>
             </div>
         </div>
 
@@ -92,7 +93,7 @@
 
             <div class="table-buy">
                 <p>129.99<sup>$</sup></p>
-                <a th:href="@{/signup}" class="pricing-action">Request</a>
+                <a href="#" class="pricing-action">Request</a>
             </div>
         </div>
     </div>
